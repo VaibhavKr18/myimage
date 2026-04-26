@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Image Sprite Demo</title>
+    <style>
+        /* ============================
+           CSS Image Sprite - Internal CSS
+           Sprite Sheet: icon.jpeg (225x225)
+           Grid: 5 columns x 5 rows
+           Each icon: ~45x45 px
+           ============================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            max-width: 600px;
+        }
+
+        .icon-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .icon-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon-card span {
+            font-size: 11px;
+            color: #555;
+            text-align: center;
+        }
+
+        /* Base sprite class */
+        .sprite {
+            width: 45px;
+            height: 45px;
+            background-image: url('icon.jpeg');
+            background-repeat: no-repeat;
+            display: inline-block;
+        }
+
+        /* ---- Row 1 (y: 0px) ---- */
+        .icon-facebook        { background-position: 0px 0px; }
+        .icon-messenger       { background-position: -45px 0px; }
+        .icon-instagram       { background-position: -90px 0px; }
+        .icon-whatsapp        { background-position: -135px 0px; }
+        .icon-twitter         { background-position: -180px 0px; }
+
+        /* ---- Row 2 (y: -45px) ---- */
+        .icon-pinterest       { background-position: 0px -45px; }
+        .icon-tiktok          { background-position: -45px -45px; }
+        .icon-youtube         { background-position: -90px -45px; }
+        .icon-linkedin        { background-position: -135px -45px; }
+        .icon-firefox         { background-position: -180px -45px; }
+
+        /* ---- Row 3 (y: -90px) ---- */
+        .icon-spotify         { background-position: 0px -90px; }
+        .icon-vimeo           { background-position: -45px -90px; }
+        .icon-snapchat        { background-position: -90px -90px; }
+        .icon-tumblr          { background-position: -135px -90px; }
+        .icon-line            { background-position: -180px -90px; }
+
+        /* ---- Row 4 (y: -135px) ---- */
+        .icon-twitch          { background-position: 0px -135px; }
+        .icon-skype           { background-position: -45px -135px; }
+        .icon-reddit          { background-position: -90px -135px; }
+        .icon-behance         { background-position: -135px -135px; }
+        .icon-kakao           { background-position: -180px -135px; }
+
+        /* ---- Row 5 (y: -180px) ---- */
+        .icon-telegram        { background-position: 0px -180px; }
+        .icon-discord         { background-position: -45px -180px; }
+        .icon-wechat          { background-position: -90px -180px; }
+        .icon-medium          { background-position: -135px -180px; }
+        .icon-email           { background-position: -180px -180px; }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Image Sprite Demo</h1>
+    <p class="subtitle">All 25 icons below are rendered from a single image — <strong>icon.jpeg</strong></p>
+
+    <div class="icon-grid">
+
+        <!-- Row 1 -->
+        <div class="icon-card">
+            <div class="sprite icon-facebook"></div>
+            <span>Facebook</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-messenger"></div>
+            <span>Messenger</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-instagram"></div>
+            <span>Instagram</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-whatsapp"></div>
+            <span>WhatsApp</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-twitter"></div>
+            <span>Twitter</span>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="icon-card">
+            <div class="sprite icon-pinterest"></div>
+            <span>Pinterest</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-tiktok"></div>
+            <span>TikTok</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-youtube"></div>
+            <span>YouTube</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-linkedin"></div>
+            <span>LinkedIn</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-firefox"></div>
+            <span>Firefox</span>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="icon-card">
+            <div class="sprite icon-spotify"></div>
+            <span>Spotify</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-vimeo"></div>
+            <span>Vimeo</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-snapchat"></div>
+            <span>Snapchat</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-tumblr"></div>
+            <span>Tumblr</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-line"></div>
+            <span>LINE</span>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="icon-card">
+            <div class="sprite icon-twitch"></div>
+            <span>Twitch</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-skype"></div>
+            <span>Skype</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-reddit"></div>
+            <span>Reddit</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-behance"></div>
+            <span>Behance</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-kakao"></div>
+            <span>KakaoTalk</span>
+        </div>
+
+        <!-- Row 5 -->
+        <div class="icon-card">
+            <div class="sprite icon-telegram"></div>
+            <span>Telegram</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-discord"></div>
+            <span>Discord</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-wechat"></div>
+            <span>WeChat</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-medium"></div>
+            <span>Medium</span>
+        </div>
+        <div class="icon-card">
+            <div class="sprite icon-email"></div>
+            <span>Email</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
